@@ -2,12 +2,13 @@
 
 system 'clear'
 puts 'Welcome to Tic Tac Toe'
+# rubocop: disable Metrics/BlockLength
 loop do
   puts 'Would you like to start a new game?(y/n)'
   start_game = gets.chomp.to_s.downcase
   puts ' '
+  system 'clear'
   if start_game == 'y'
-    system 'clear'
     puts 'Here we go!!'
     puts ' '
     puts 'Starting new game' # create a new game
@@ -23,7 +24,7 @@ loop do
     loop do
       if round.even?
         puts "#{player1} it's your turn"
-      else 
+      else
         puts "#{player2} it's your turn"
       end
       puts ' '
@@ -32,6 +33,7 @@ loop do
       puts 'Choose an available cell:'
       puts 'here the available coordinates are displayed'
       position = gets.chomp
+      puts "you have chosen #{position}"
       puts 'checking if there is a winner' # break if theres a winner
       round += 1
       puts "It's a draw!!" if round == 9
@@ -48,3 +50,4 @@ loop do
     puts ' '
   end
 end
+# rubocop: enable Metrics/BlockLength
