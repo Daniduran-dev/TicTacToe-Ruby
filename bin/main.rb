@@ -1,4 +1,5 @@
 # !/usr/bin/env ruby
+require_relative '../lib/board.rb'
 
 system 'clear'
 puts 'Welcome to Tic Tac Toe'
@@ -19,24 +20,27 @@ loop do
     print 'Player 2 introduce your name: '
     player2 = gets.chomp.upcase
     puts ' '
-    puts "#{player1} plays with X    #{player2} plays with O" # create players
     round = 0
     loop do
-      if round.even?
-        puts "#{player1} it's your turn"
-      else
-        puts "#{player2} it's your turn"
-      end
+      system 'clear'
+      puts "#{player1} plays with X    #{player2} plays with O" # create players
       puts ' '
-      puts 'Here the board is displayed'
+      puts round.even? ? "#{player1} it's your turn" : "#{player2} it's your turn"
       puts ' '
-      puts 'Choose an available cell:'
-      puts 'here the available coordinates are displayed'
-      position = gets.chomp
+      board = Board.new
+      board.display_board
+      puts ' '
+      print 'Choose an available cell: '
+      board.empty_cells
+      puts ' '
+      position = gets.chomp.to_sym
       puts "you have chosen #{position}"
+      board.validate_position(position, round)
       puts 'checking if there is a winner' # break if theres a winner
       round += 1
+      system 'clear'
       puts "It's a draw!!" if round == 9
+      puts ' '
       break if round == 9
     end
   elsif start_game == 'n'
