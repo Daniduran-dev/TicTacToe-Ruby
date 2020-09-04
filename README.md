@@ -3,6 +3,8 @@
 
 This is a totally functional Tic Tac Toe game ready to play in your computer terminal. The user interface has been enhaced to achieve the best experience.
 
+![screenshot](tictactoe-readme.png)
+
 ## Built with
 
 - Ruby
