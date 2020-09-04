@@ -21,14 +21,21 @@ class Board
     @board[position] = (round.even? ? 'X' : 'O')
   end
 
-  def validate_position(position, round)
-    if @board[position].include?(' ')
-      update_board(position, round)
-    else
-      system 'clear'
-      display_board
-      puts 'Please enter any of these coordenates in (letter + number) format. Ex: a1'
-      empty_cells
+  def validate_position(position)
+    true if @board.include?(position) && @board[position].include?(' ')
+  end
+
+  def winner_checking
+    @win_combo = [%i[a1 a2 a3], %i[b1 b2 b3], %i[c1 c2 c3],
+                  %i[a1 b1 c1], %i[a2 b2 c2], %i[a3 b3 c3],
+                  %i[a1 b2 c3], %i[c1 b2 a3]]
+    wins = {}
+    @win_combo.each do |k|
+      case @board.values_at(*k)
+      when %w[X X X] then wins[k] = 'X'
+      when %w[O O O] then wins[k] = 'O'
+      end
     end
+    wins
   end
 end
