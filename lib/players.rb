@@ -5,11 +5,15 @@ class Players
   end
 
   def designation
-    plays_with = "#{player1} plays with X    #{player2} plays with O"
+    plays_with = "#{@player1} plays with X    #{@player2} plays with O"
     plays_with
   end
 
-  def turn
-    round.even? ? "#{player1} it's your turn" : "#{player2} it's your turn"
+  def turn(round)
+    round.even? ? "#{@player1} it's your turn" : "#{@player2} it's your turn"
+  end
+
+  def winner(round)
+    round.even? ? "The winner is #{@player1}" : "The winner is #{@player2}"
   end
 end

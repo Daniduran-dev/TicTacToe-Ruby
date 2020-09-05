@@ -29,7 +29,7 @@ loop do
         system 'clear'
         puts players.designation
         puts ' '
-        puts players.turn
+        puts players.turn(round)
         puts ' '
         puts board.display_board
         puts ' '
@@ -41,11 +41,11 @@ loop do
       end
       unless board.winner_checking.empty?
         system 'clear'
-        puts "#{player1} plays with X    #{player2} plays with O"
+        puts puts players.designation
         puts ' '
-        puts round.even? ? "The winner is #{player1}" : "The winner is #{player2}"
+        puts players.winner(round)
         puts ' '
-        board.display_board
+        puts board.display_board
         puts ' '
         puts "The winning combination is: #{board.winner_checking.keys}"
         puts ' '
@@ -53,9 +53,11 @@ loop do
       end
       round += 1
       system 'clear'
-      puts "It's a draw!!" if round == 9
-      puts ' '
-      break if round == 9
+      if round == 9
+        puts "It's a draw!!"
+        puts ' '
+        break
+      end
     end
   elsif start_game == 'n'
     system 'clear'
