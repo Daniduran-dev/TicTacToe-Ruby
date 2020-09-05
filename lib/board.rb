@@ -4,15 +4,12 @@ class Board
   end
 
   def display_board
-    puts '  1 2 3'
-    puts "a|#{@board[:a1]}|#{@board[:a2]}|#{@board[:a3]}|"
-    puts "b|#{@board[:b1]}|#{@board[:b2]}|#{@board[:b3]}|"
-    puts "c|#{@board[:c1]}|#{@board[:c2]}|#{@board[:c3]}|"
+    display = "  1 2 3\na|#{@board[:a1]}|#{@board[:a2]}|#{@board[:a3]}|\nb|#{@board[:b1]}|#{@board[:b2]}|#{@board[:b3]}|\nc|#{@board[:c1]}|#{@board[:c2]}|#{@board[:c3]}|"
   end
 
   def empty_cells
     freecells = @board.select { |_k, v| v == ' ' }
-    print freecells.keys
+    freecells.keys
   end
 
   def update_board(position, round)

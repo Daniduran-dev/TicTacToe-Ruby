@@ -32,7 +32,7 @@ loop do
         board.display_board
         puts ' '
         print 'Choose an available cell: '
-        board.empty_cells
+        print board.empty_cells
         puts ' '
         position = gets.chomp.to_sym
         break if (board.update_board(position, round) if board.validate_position(position))
