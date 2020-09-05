@@ -3,9 +3,12 @@ class Board
     @board = { a1: ' ', a2: ' ', a3: ' ', b1: ' ', b2: ' ', b3: ' ', c1: ' ', c2: ' ', c3: ' ' }
   end
 
+  # rubocop: disable Layout/LineLength
   def display_board
     display = "  1 2 3\na|#{@board[:a1]}|#{@board[:a2]}|#{@board[:a3]}|\nb|#{@board[:b1]}|#{@board[:b2]}|#{@board[:b3]}|\nc|#{@board[:c1]}|#{@board[:c2]}|#{@board[:c3]}|"
+    display
   end
+  # rubocop: enable Layout/LineLength
 
   def empty_cells
     freecells = @board.select { |_k, v| v == ' ' }

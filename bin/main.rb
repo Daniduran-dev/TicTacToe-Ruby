@@ -1,5 +1,6 @@
 # !/usr/bin/env ruby
 require_relative '../lib/board.rb'
+require_relative '../lib/players.rb'
 
 system 'clear'
 puts 'Welcome to Tic Tac Toe'
@@ -21,15 +22,16 @@ loop do
     print 'Player 2 introduce your name: '
     player2 = gets.chomp.upcase
     round = 0
+    players = Players.new(player1, player2)
     board = Board.new
     loop do
       loop do
         system 'clear'
-        puts "#{player1} plays with X    #{player2} plays with O"
+        puts players.designation
         puts ' '
-        puts round.even? ? "#{player1} it's your turn" : "#{player2} it's your turn"
+        puts players.turn
         puts ' '
-        board.display_board
+        puts board.display_board
         puts ' '
         print 'Choose an available cell: '
         print board.empty_cells
