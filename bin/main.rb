@@ -53,11 +53,8 @@ loop do
       end
       round += 1
       system 'clear'
-      if round == 9
-        puts "It's a draw!!"
-        puts ' '
-        break
-      end
+      puts ' '
+      return puts "It's a draw!!" if round == 9
     end
   elsif start_game == 'n'
     system 'clear'
