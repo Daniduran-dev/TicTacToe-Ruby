@@ -5,7 +5,7 @@ class Board
 
   # rubocop: disable Layout/LineLength
   def display_board
-    display = "  1 2 3\na|#{@board[:a1]}|#{@board[:a2]}|#{@board[:a3]}|\nb|#{@board[:b1]}|#{@board[:b2]}|#{@board[:b3]}|\nc|#{@board[:c1]}|#{@board[:c2]}|#{@board[:c3]}|"
+    display = "   1   2   3\na| #{@board[:a1]} | #{@board[:a2]} | #{@board[:a3]} |\nb| #{@board[:b1]} | #{@board[:b2]} | #{@board[:b3]} |\nc| #{@board[:c1]} | #{@board[:c2]} | #{@board[:c3]} |"
     display
   end
   # rubocop: enable Layout/LineLength
