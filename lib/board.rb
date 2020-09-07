@@ -1,6 +1,9 @@
 class Board
   def initialize
     @board = { a1: ' ', a2: ' ', a3: ' ', b1: ' ', b2: ' ', b3: ' ', c1: ' ', c2: ' ', c3: ' ' }
+    @win_combo = [%i[a1 a2 a3], %i[b1 b2 b3], %i[c1 c2 c3],
+                  %i[a1 b1 c1], %i[a2 b2 c2], %i[a3 b3 c3],
+                  %i[a1 b2 c3], %i[c1 b2 a3]]
   end
 
   # rubocop: disable Layout/LineLength
@@ -25,9 +28,6 @@ class Board
   end
 
   def winner_checking
-    @win_combo = [%i[a1 a2 a3], %i[b1 b2 b3], %i[c1 c2 c3],
-                  %i[a1 b1 c1], %i[a2 b2 c2], %i[a3 b3 c3],
-                  %i[a1 b2 c3], %i[c1 b2 a3]]
     wins = {}
     @win_combo.each do |k|
       case @board.values_at(*k)
