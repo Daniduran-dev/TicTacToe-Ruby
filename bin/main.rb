@@ -37,7 +37,7 @@ loop do
         print board.empty_cells
         puts ' '
         position = gets.chomp.to_sym
-        if !board.validate_position(position)
+        unless board.validate_position(position)
           puts ' '
           puts 'Wrong coordenate!!'
           puts ' '
