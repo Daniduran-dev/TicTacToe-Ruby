@@ -37,6 +37,14 @@ loop do
         print board.empty_cells
         puts ' '
         position = gets.chomp.to_sym
+        if !board.validate_position(position)
+          puts ' '
+          puts 'Wrong coordenate!!'
+          puts ' '
+          puts 'Press any button to try again.'
+          press_button = gets
+          press_button
+        end
         break if (board.update_board(position, round) if board.validate_position(position))
       end
       unless board.winner_checking.empty?
@@ -46,8 +54,6 @@ loop do
         puts players.winner(round)
         puts ' '
         puts board.display_board
-        puts ' '
-        puts "The winning combination is: #{board.winner_checking.keys}"
         puts ' '
         break
       end

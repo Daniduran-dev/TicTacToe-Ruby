@@ -20,7 +20,8 @@ class Board
   end
 
   def validate_position(position)
-    true if @board.include?(position) && @board[position].include?(' ')
+    valid = @board.include?(position) && @board[position].include?(' ')
+    true if valid
   end
 
   def winner_checking
