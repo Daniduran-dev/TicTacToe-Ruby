@@ -50,7 +50,6 @@ loop do
       unless board.winner_checking.empty?
         system 'clear'
         puts puts players.designation
-        puts ' '
         puts players.winner(round)
         puts ' '
         puts board.display_board
