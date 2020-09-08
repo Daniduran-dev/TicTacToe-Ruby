@@ -41,7 +41,7 @@ loop do
           puts ' '
           puts 'Wrong coordenate!!'
           puts ' '
-          puts 'Press any button to try again.'
+          puts 'Press ENTER button to try again.'
           press_button = gets
           press_button
         end
