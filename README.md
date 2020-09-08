@@ -5,6 +5,10 @@ This is a totally functional Tic Tac Toe game ready to play in your computer ter
 
 ![screenshot](tictactoe-readme.png)
 
+## Live version
+
+[![Run on Repl.it](https://repl.it/badge/github/Daniduran-dev/TicTacToe-Ruby)](https://repl.it/github/Daniduran-dev/TicTacToe-Ruby)
+
 ## Built with
 
 - Ruby
