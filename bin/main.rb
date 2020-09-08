@@ -59,7 +59,10 @@ loop do
       round += 1
       system 'clear'
       puts ' '
-      return puts "It's a draw!!" if round == 9
+      if round == 9
+        puts "It's a draw!!\n "
+        break
+      end
     end
   elsif start_game == 'n'
     system 'clear'
