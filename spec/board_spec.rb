@@ -13,7 +13,7 @@ describe Board do
   end
 
   describe '#empty_cells' do
-    it 'shows an array with the keys representing the free positions' do
+    it 'Checks if there is an array with the keys representing the free positions' do
       expect(board.empty_cells).to be_a(Array)
     end
     it 'returns an array with the symbols of the free positions' do
@@ -35,6 +35,11 @@ describe Board do
     end
   end
   describe '#winner_checking' do
-
+    it 'returns the winner mark' do
+      board.update_board(:a1, 0)
+      board.update_board(:a2, 2)
+      board.update_board(:a3, 4)
+      expect(board.winner_checking).to eql({ %i[a1 a2 a3] => 'X' })
+    end
   end
 end
