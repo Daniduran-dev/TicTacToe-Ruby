@@ -20,6 +20,7 @@ class Board
 
   def update_board(position, round)
     @board[position] = (round.even? ? 'X' : 'O')
+    @board[position]
   end
 
   def validate_position(position)
