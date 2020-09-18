@@ -10,6 +10,7 @@ describe Board do
     end
     it 'displays the board on screen' do
       expect(board.display_board).to eql "   1   2   3\na|   |   |   |\nb|   |   |   |\nc|   |   |   |"
+      expect(board.display_board).not_to be_nil
     end
   end
 
@@ -20,6 +21,7 @@ describe Board do
     end
     it 'returns an array with the symbols of the free positions' do
       expect(board.empty_cells).to eql %i[a1 a2 a3 b1 b2 b3 c1 c2 c3]
+      expect(board.empty_cells).not_to be_nil
     end
   end
   # rubocop: disable Layout/LineLength
