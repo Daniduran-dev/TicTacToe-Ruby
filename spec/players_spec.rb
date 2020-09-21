@@ -5,7 +5,6 @@ describe Players do
   let(:player1) { 'Dani' }
   let(:player2) { 'Duran' }
   describe '#initialize' do
-    players = Players.new('Dani', 'Duran')
     it 'checks if the names have at least 1 charachter' do
       expect(player1.size).to be >= 1
       expect(player2.size).to be >= 1
