@@ -52,16 +52,15 @@ describe Board do
     end
   end
   describe '#winner_checking' do
-    it 'returns the winner mark' do
+    before do
       board.update_board(:a1, 0)
       board.update_board(:a2, 2)
       board.update_board(:a3, 4)
+    end
+    it 'returns the winner mark' do
       expect(board.winner_checking).to eql({ %i[a1 a2 a3] => 'X' })
     end
     it 'checks that the loser mark is not returned' do
-      board.update_board(:a1, 0)
-      board.update_board(:a2, 2)
-      board.update_board(:a3, 4)
       expect(board.winner_checking).not_to eql({ %i[a1 a2 a3] => 'O' })
     end
   end
