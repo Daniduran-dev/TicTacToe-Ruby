@@ -13,7 +13,7 @@ describe Board do
     it 'displays the board on screen' do
       expect(board.display_board).to eql "   1   2   3\na|   |   |   |\nb|   |   |   |\nc|   |   |   |"
     end
-    it 'checks if theres a value stored in board' do
+    it 'checks if there is a value stored in board' do
       expect(board.display_board).not_to be_nil
     end
   end
