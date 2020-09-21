@@ -37,6 +37,14 @@ This is a totally functional Tic Tac Toe game ready to play in your computer ter
 4. Once in the main folder insert `cd bin`
 5. Here you have to insert `./main.rb` to execute the game and follow the instrucions on screen.
 
+## Testing with RSpec
+
+For professional users: RSpec tests have been included to check to correct functioning of the program.
+For accessing the RSpec tests follow the previous step 'Installation' must be completed. The you can follow these steps:
+1. Go to the main directory `TicTacToe-Ruby`
+2. Type `rspec` and press Enter. The tests will be displayed on your screen.
+- The tests are stored in the spec folder.
+
 ## Author
 
 👤 **Daniel Duran**
